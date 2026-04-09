@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dhanush-app
+  namespace: dhanush-dev
+  labels:
+    app: dhanush-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: dhanush-app
+  template:
+    metadata:
+      labels:
+        app: dhanush-app
+    spec:
+      containers:
+      - name: dhanush-app
+        image: nginx:1.25
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
