@@ -1,0 +1,29 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowS3AppBucketOnly",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:PutObject",
+        "s3:DeleteObject"
+      ],
+      "Resource": "arn:aws:s3:::dhanush-app-bucket/*"
+    },
+    {
+      "Sid": "AllowSecretsManagerRead",
+      "Effect": "Allow",
+      "Action": [
+        "secretsmanager:GetSecretValue"
+      ],
+      "Resource": "arn:aws:secretsmanager:ap-south-1:*:secret:prod/*"
+    },
+    {
+      "Sid": "DenyDeleteBucket",
+      "Effect": "Deny",
+      "Action": "s3:DeleteBucket",
+      "Resource": "*"
+    }
+  ]
+}
