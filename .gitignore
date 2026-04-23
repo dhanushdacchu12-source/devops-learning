@@ -1,0 +1,27 @@
+# Secrets — NEVER commit these
+*.env
+.env
+.env.*
+*.pem
+*.key
+*secret*
+*password*
+credentials.json
+.aws/credentials
+
+# Terraform state
+*.tfstate
+*.tfstate.backup
+.terraform/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
